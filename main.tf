@@ -9,7 +9,7 @@ variable "github_token" {
 }
 
 resource "aws_amplify_app" "hola_mundo" {
-  name       = "hola-mundo-vite"
+  name       = "hola-mundo"
   repository = "https://github.com/al22020463-ai/Vite-hola-mundo-terraform.git"
   oauth_token = var.github_token
 
@@ -39,7 +39,7 @@ EOT
   }
 }
 
-resource "aws_amplify_branch" "master" {
+resource "aws_amplify_branch" "main" {
   app_id      = aws_amplify_app.hola_mundo.id
-  branch_name = "master"
+  branch_name = "main"
 }
